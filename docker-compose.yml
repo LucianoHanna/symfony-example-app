@@ -5,8 +5,6 @@ services:
       target: builder
     ports:
       - '80:80'
-    volumes:
-      - ./app/src:/var/www/html/
     networks:
       - backend
   db:

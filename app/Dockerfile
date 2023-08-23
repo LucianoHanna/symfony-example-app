@@ -2,6 +2,7 @@
 
 FROM --platform=$BUILDPLATFORM php:8.2-apache as builder
 
+COPY src /var/www/html
 RUN apt update
 RUN apt install -yq git
 
@@ -29,3 +30,6 @@ RUN a2ensite apache-site.conf
 RUN docker-php-ext-install pdo_mysql
 RUN apt-get update && apt-get install -y zlib1g-dev libzip-dev
 RUN docker-php-ext-install zip
+
+ENV COMPOSER_ALLOW_SUPERUSER=1
+RUN composer install --no-cache -d /var/www/html
