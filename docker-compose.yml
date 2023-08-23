@@ -7,3 +7,17 @@ services:
       - '80:80'
     volumes:
       - ./app/src:/var/www/html/
+    networks:
+      - backend
+  db:
+    image: 'mysql:8.1.0'
+    environment:
+      MYSQL_ROOT_PASSWORD: 'changeme'
+      MYSQL_DATABASE: 'app'
+      MYSQL_USER: 'app'
+      MYSQL_PASSWORD: '!ChangeMe!'
+    networks:
+      - backend
+
+networks:
+  backend:

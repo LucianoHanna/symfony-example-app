@@ -24,3 +24,6 @@ RUN a2dissite 000-default.conf
 
 COPY etc/apache-site.conf /etc/apache2/sites-available/apache-site.conf
 RUN a2ensite apache-site.conf
+
+# Install dependency
+RUN docker-php-ext-install pdo_mysql
