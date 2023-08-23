@@ -33,3 +33,6 @@ RUN docker-php-ext-install zip
 
 ENV COMPOSER_ALLOW_SUPERUSER=1
 RUN composer install --no-cache -d /var/www/html
+
+# Database migration
+RUN php bin/console doctrine:migrations:migrate
