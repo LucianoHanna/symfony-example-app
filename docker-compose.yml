@@ -1,0 +1,9 @@
+services:
+  web:
+    build:
+      context: app
+      target: builder
+    ports:
+      - '80:80'
+    volumes:
+      - ./app/src:/var/www/html/
