@@ -2,6 +2,44 @@
 
 {% block title %}Register!{% endblock %}
 
+{% block stylesheets %}
+    <style>
+        .center-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .form {
+            text-align: center;
+            background-color: white;
+        }
+
+        .center-box .form {
+            padding: 3ch;
+            border-radius: 12px;
+        }
+
+        .form div {
+            margin-bottom: 2vh;
+        }
+
+        .form button {
+            width: 100%;
+            color: white;
+            background-color: #1E88E5;
+            font-weight: bold;
+            font-size: large;
+            border-radius: 12px !important;
+        }
+    </style>
+{% endblock %}
+
 {% block body %}
-{{ form(form) }}
+<div class="container center-box">
+    <div class="form">
+        {{ form(form) }}
+    </div>
+</div>
 {% endblock %}

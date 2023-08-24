@@ -2,8 +2,50 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <script src="https://unpkg.com/vue@next"></script>
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+
+        <style>
+            body {
+                background-color: #1E88E5;
+                font-family: 'Roboto';
+            }
+
+            form div:has(> input:not([type="hidden"]):not([hidden])) {
+                display: grid;
+                text-align: left;
+            }
+
+            input, button {
+                border: solid 1px #BDBDBD;
+                padding: 8px;
+            }
+
+            input {
+                border-radius: 8px;
+            }
+
+
+            .alert {
+                border-radius: 8px;
+                padding-top: 1ex;
+                padding-bottom: 1ex;
+                border: solid 2px;
+            }
+
+            .alert-danger {
+                background-color: #E53935;
+                border-color: #B71C1C;
+                color: white;
+            }
+
+            label {
+                color: #757575;
+            }
+        </style>
         {% block stylesheets %}
         {% endblock %}
 
