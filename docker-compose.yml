@@ -1,12 +1,4 @@
 services:
-  web:
-    build:
-      context: app
-      target: builder
-    ports:
-      - '80:80'
-    networks:
-      - backend
   db:
     image: 'mysql:8.1.0'
     environment:
@@ -16,6 +8,26 @@ services:
       MYSQL_PASSWORD: '!ChangeMe!'
     networks:
       - backend
+  web:
+    build:
+      context: app
+      target: builder
+    ports:
+      - '80:80'
+    networks:
+      - backend
+    depends_on:
+      - db
+
+  migration:
+    build:
+      context: app
+      target: builder
+    command: /bin/sh -c "/db-migrate.sh"
+    networks:
+      - backend
+    depends_on:
+      - db
 
 networks:
   backend:
