@@ -33,6 +33,7 @@ security:
     access_control:
         - { path: ^/login }
         - { path: ^/logout }
+        - { path: ^/register }
         - { path: ^/, roles: ROLE_DEFAULT }
 
 when@test:
