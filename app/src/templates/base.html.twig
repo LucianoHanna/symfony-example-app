@@ -8,10 +8,12 @@
         <script src="https://unpkg.com/vue@next"></script>
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
         <style>
             body {
-                background-color: #1E88E5;
                 font-family: 'Roboto';
+                margin: 0;
             }
 
             form div:has(> input:not([type="hidden"]):not([hidden])) {
@@ -45,6 +47,20 @@
             label {
                 color: #757575;
             }
+
+            .menu {
+                background-color: #1E88E5;
+                color: white;
+                display: grid;
+                padding-left: 1ch;
+                padding-right: 1ch;
+                padding-top: 1ex;
+                padding-bottom: 1ex;
+            }
+
+            .menu .user {
+                justify-self: end;
+            }
         </style>
         {% block stylesheets %}
         {% endblock %}
@@ -53,6 +69,15 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <div class="menu">
+            <div class="user">
+                {% if app.user %}
+                    Hello, {{ app.user.username }}
+                {% endif %}
+            </div>
+        </div>
+        <div class="body">
+            {% block body %}{% endblock %}
+        </div>
     </body>
 </html>
