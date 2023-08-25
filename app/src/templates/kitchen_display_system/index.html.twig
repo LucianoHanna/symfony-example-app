@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello KitchenDisplaySystemController!{% endblock %}
+
+{% block javascripts %}
+<script type="module">
+    import KDS from '{{ asset('js/kds.js') }}'
+    Vue.createApp(KDS).mount('#app')
+</script>
+{% endblock %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/kds.css') }}">
+{% endblock %}
+
+{% block body %}
+<div id="app">Loading...</div>
+{% endblock %}

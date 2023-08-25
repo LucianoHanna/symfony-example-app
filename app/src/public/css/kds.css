@@ -1,0 +1,47 @@
+.kdsItem {
+    border: solid 2px #1E88E5;
+    border-radius: 8px;
+    width: fit-content;
+    padding: 16px;
+    min-width: 20%;
+}
+
+.kdsItem .table {
+    display: inline-block;
+    background-color: #0D47A1;
+    color: white;
+    border-radius: 4px;
+    padding-left: 1ch;
+    padding-right: 1ch;
+    width: fit-content;
+    height: fit-content;
+    font-size: xx-large;
+}
+
+.kdsItem .waitingTime {
+    display: inline-block;
+    border: solid 2px #0D47A1;
+    width: fit-content;
+    border-radius: 4px;
+    padding-left: 1ch;
+    padding-right: 1ch;
+    font-size: larger;
+    margin-left: 16px;
+    margin-right: 0;
+}
+
+.kdsItem table {
+    width: 100%;
+    font-size: larger;
+}
+
+.kdsItems {
+    display: flex;
+    margin: 16px;
+    flex-wrap: wrap;
+}
+
+.kdsItems .kdsItem {
+    margin-right: 16px;
+    margin-bottom: 16px;
+}
